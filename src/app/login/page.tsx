@@ -27,7 +27,7 @@ const LoginPage = () => {
       console.log(res);
       if (res.accessToken) {
         alert(res.message);
-        localStorage.setItem('accessToken', res.accessToken)
+        localStorage.setItem("accessToken", res.accessToken);
         router.push("/");
       }
     } catch (err: any) {
@@ -96,10 +96,11 @@ const LoginPage = () => {
           <div className="flex justify-center mb-10 mt-2">
             <button
               className="btn btn-circle"
-              //* google auth account e 'Authorized redirect URIs' ai option e 'http://localhost:3000/api/auth/callback/google' URL use korbo
+              //* google auth account e 'Authorized redirect URIs' ai option e 'http://<mainurl>/api/auth/callback/google' URL use korbo
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl:
+                    "https://l2-nextjs-auth-client.vercel.app/dashboard",
                 })
               }
             >
@@ -115,7 +116,8 @@ const LoginPage = () => {
               className="btn btn-circle"
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl:
+                    "https://l2-nextjs-auth-client.vercel.app/dashboard",
                 })
               }
             >
