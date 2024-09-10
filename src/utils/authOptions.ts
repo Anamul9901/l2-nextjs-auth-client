@@ -17,4 +17,9 @@ export const authOptions: NextAuthOptions = {
 
   //! auth signIn er por user er data coocis theke get korar jonno ai secrat use korte hobe
   secret: process.env.NEXTAUTH_SECRET,
+
+  //* user login na thakle, privet route access korte chile auto 'login' page e niya asbe
+  pages: {
+    signIn: "/login",
+  },
 };
